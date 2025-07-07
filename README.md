@@ -13,9 +13,9 @@ Track face movement with ByteTrack to maintain ID
 
 Automatically control PTZ:
 
-    Pan/tilt to center the detected face
+  Pan/tilt to center the detected face
 
-    Zoom in once face is centered
+  Zoom in once face is centered
 
 Capture and save a snapshot of the face
 

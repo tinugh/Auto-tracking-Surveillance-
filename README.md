@@ -1,23 +1,29 @@
 🚨 Restricted Area Face Tracking with PTZ Camera
 
-This system is designed to monitor and track individuals entering a restricted area, such as a secured room or high-security zone. Using a PTZ-enabled IP camera, the system detects faces, automatically pans/tilts to center them, zooms in, captures a snapshot, and saves the full annotated video for record-keeping or alerting.
-
+This AI-powered surveillance system is designed to monitor individuals entering restricted or high-security areas using a PTZ-enabled ONVIF IP camera. It connects to the camera’s RTSP stream, detects faces in real time using YOLOv8, and tracks them with ByteTrack to maintain consistent identity. When a face is detected, the system automatically pans and tilts the camera to center the face in the frame, then zooms in smoothly. Once the face is properly zoomed and centered, a snapshot is captured and saved, and the system then zooms out to resume scanning for new faces. The full annotated video is recorded, and all cropped face images are stored separately for review or alerting purposes.
 
 Working Pipeline:
 
 
-.Connect to RTSP Stream from an ONVIF-enabled PTZ IP camera
-.Detect Faces in Real-Time using YOLOv8 (yolov8n-face.pt)
-.Track Face Movement using ByteTrack for ID persistence
-.Automatically Control PTZ:
-       > Pan and tilt the camera to center the face
-       > Zoom in smoothly when the face is centered
-.Take Snapshot of the face and save it once zoomed
-.Zoom Out and return to tracking new faces
-.Take Snapshot of the face and save it once zoomed
-.Zoom Out and return to tracking new faces
-.All face crops saved in a dedicated folder
+Connect to RTSP stream from an ONVIF-enabled PTZ IP camera/n
 
+Detect faces in real-time using YOLOv8 (yolov8n-face.pt)/n
+
+Track face movement with ByteTrack to maintain ID
+
+Automatically control PTZ:
+
+    Pan/tilt to center the detected face
+
+    Zoom in once face is centered
+
+Capture and save a snapshot of the face
+
+Zoom out and return to tracking
+
+Save all cropped face images in face_bboxes/
+
+Save the full output video with annotations as multnew.avi
 
 
 
